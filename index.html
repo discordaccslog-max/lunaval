@@ -3,289 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Store — Shop For LunaFN Accounts</title>
-  <meta name="description" content="Shop For LunaFN Accounts. 2000+ Happy Customers. Instant Delivery.">
+  <title>My Store</title>
+  <meta name="description" content="My Store">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <a class="skip-to-content" href="#main-content">Skip to content</a>
-
-  <!-- Top Announcement Bar with arrows -->
-  <div class="announcement-bar-top">
-    <div class="announcement-bar-inner">
-      <button class="announcement-arrow announcement-arrow--left" aria-label="Previous">
-        <svg viewBox="0 0 14 14" fill="none"><path d="M9 1L3 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <span class="announcement-bar-text">Over 2000+Customers!</span>
-      <button class="announcement-arrow announcement-arrow--right" aria-label="Next">
-        <svg viewBox="0 0 14 14" fill="none"><path d="M5 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Urgency Bar (static row of 4 items) -->
-  <div class="urgency-bar">
-    <div class="urgency-bar-inner">
-      <div class="urgency-item">
-        <span class="urgency-item-icon">🔥</span>
-        <span class="urgency-item-bold text-orange">45% OFF</span>
-        <span style="color:rgba(255,255,255,0.6);">— Limited time deal</span>
-      </div>
-      <div class="urgency-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="opacity:0.7;"><circle cx="7" cy="7" r="6" stroke="#ef4444" stroke-width="1.3"/><path d="M7 3.5V7l2 1.5" stroke="#ef4444" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <span>Ends in <span class="urgency-item-bold text-red" id="countdown">419:18:57</span></span>
-      </div>
-      <div class="urgency-item">
-        <span class="urgency-dot urgency-dot--red"></span>
-        <span class="urgency-item-bold text-red">Low Stock</span>
-        <span style="color:rgba(255,255,255,0.6);">— limited accounts available</span>
-      </div>
-      <div class="urgency-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7s2-4 6-4 6 4 6 4-2 4-6 4-6-4-6-4z" stroke="#22c55e" stroke-width="1.3"/><circle cx="7" cy="7" r="2" stroke="#22c55e" stroke-width="1.3"/></svg>
-        <span><span class="urgency-item-bold text-green">24</span> people viewing now</span>
+  <!-- UTILITY BAR (rotating announcements) -->
+  <div class="utility-bar">
+    <div class="utility-bar__grid">
+      <div class="announcement-bar" id="announcement-bar">
+        <button class="slider-button slider-button--prev" aria-label="Previous announcement">
+          <svg viewBox="0 0 10 6" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"/></svg>
+        </button>
+        <div class="announcement-bar__slides">
+          <div class="announcement-bar__slide is-active"><p class="announcement-bar__message"><span>Welcome To Our Shop!</span></p></div>
+          <div class="announcement-bar__slide"><p class="announcement-bar__message"><span>Over 2000+Customers!</span></p></div>
+          <div class="announcement-bar__slide"><p class="announcement-bar__message"><span>Instant Delivery!</span></p></div>
+          <div class="announcement-bar__slide"><p class="announcement-bar__message"><span>%45 OFF Summer Deal!</span></p></div>
+          <div class="announcement-bar__slide"><p class="announcement-bar__message"><span>Affordable Prices!</span></p></div>
+        </div>
+        <button class="slider-button slider-button--next" aria-label="Next announcement">
+          <svg viewBox="0 0 10 6" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"/></svg>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Header with centered logo + nav below -->
-  <header class="site-header" role="banner">
-    <div class="page-width">
+  <!-- LUNA URGENCY BAR -->
+  <div id="luna-urgency-bar">
+    <div id="luna-urgency-inner">
+      <div class="lu-block lu-fire">
+        <span class="lu-fire-icon">🔥</span>
+        <span class="lu-fire-text"><strong>45% OFF</strong> — Limited time deal</span>
+      </div>
+      <div class="lu-sep"></div>
+      <div class="lu-block lu-timer">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#ff6b6b" stroke-width="1.3"/><path d="M6.5 3.5V6.5L8.5 8" stroke="#ff6b6b" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>Ends in <strong id="lu-countdown">--:--:--</strong></span>
+      </div>
+      <div class="lu-sep"></div>
+      <div class="lu-block lu-stock">
+        <span class="lu-stock-dot"></span>
+        <span><strong>Low Stock</strong> — limited accounts available</span>
+      </div>
+      <div class="lu-sep"></div>
+      <div class="lu-block lu-viewers">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1 6.5C1 6.5 3 2.5 6.5 2.5C10 2.5 12 6.5 12 6.5C12 6.5 10 10.5 6.5 10.5C3 10.5 1 6.5 1 6.5Z" stroke="#4ade80" stroke-width="1.3"/><circle cx="6.5" cy="6.5" r="1.8" stroke="#4ade80" stroke-width="1.3"/></svg>
+        <span><strong id="lu-viewers">24</strong> people viewing now</span>
+      </div>
+    </div>
+  </div>
 
-      <div class="header-top-row">
-        <!-- LEFT: search + mobile menu -->
-        <div class="header-left">
-          <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu">
-            <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <button class="header-action-btn" data-search-toggle aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
-          </button>
-        </div>
+  <!-- HEADER (centered logo, nav below) -->
+  <header class="site-header">
 
-        <!-- CENTER: logo -->
-        <div class="header-logo">
-          <a href="index.html"><span class="header-logo-text">My Store</span></a>
-        </div>
-
-        <!-- RIGHT: account + cart -->
-        <div class="header-right">
-          <button class="header-action-btn" aria-label="Account">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 17c0-3 3-5 7-5s7 2 7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <button class="header-action-btn" data-cart-toggle aria-label="Cart">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/></svg>
-            <span class="cart-count" style="display:none">0</span>
-          </button>
-        </div>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="header-menu-toggle" data-menu-toggle aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16"><path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor"/></svg>
+        </button>
+        <button class="header-action-btn" data-search-toggle aria-label="Search">
+          <svg viewBox="0 0 18 19" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/></svg>
+        </button>
       </div>
 
-      <!-- Bottom row: Nav -->
-      <nav class="header-nav" role="navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="collection.html" class="nav-link">Catalog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+      <h1 class="header-logo">
+        <a href="index.html"><span class="header-logo-text">My Store</span></a>
+      </h1>
 
+      <div class="header-right">
+        <button class="header-action-btn" aria-label="Account">
+          <svg viewBox="0 0 18 19" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z" fill="currentColor"/></svg>
+        </button>
+        <a href="cart.html" class="header-action-btn" data-cart-toggle aria-label="Cart">
+          <svg viewBox="0 0 40 40" fill="none"><path d="m15.75 11.8h-3.16l-.77 11.6a5 5 0 0 0 4.99 5.34h7.38a5 5 0 0 0 4.99-5.33l-.78-11.61zm0 1h-2.22l-.71 10.67a4 4 0 0 0 3.99 4.27h7.38a4 4 0 0 0 4-4.27l-.72-10.67h-2.22v.63a4.75 4.75 0 1 1 -9.5 0zm8.5 0h-7.5v.63a3.75 3.75 0 1 0 7.5 0z" fill="currentColor" fill-rule="evenodd"/></svg>
+          <span class="cart-count" style="display:none">0</span>
+        </a>
+      </div>
     </div>
+
+    <nav class="header-nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="collection.html" class="nav-link">Catalog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
   </header>
 
-  <!-- Search Overlay -->
+  <!-- SEARCH OVERLAY -->
   <div class="search-overlay">
     <div class="search-panel">
       <form class="search-input-wrap" onsubmit="return false;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
-        <input type="search" placeholder="Search products..." autocomplete="off" aria-label="Search">
+        <svg viewBox="0 0 18 19" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/></svg>
+        <input type="search" placeholder="Search" autocomplete="off" aria-label="Search">
       </form>
     </div>
   </div>
 
-  <!-- Mobile Nav -->
+  <!-- MOBILE NAV -->
   <div class="mobile-nav-overlay">
     <div class="mobile-nav-drawer">
       <div class="mobile-nav-header">
         <span class="header-logo-text">My Store</span>
-        <button class="mobile-nav-close" aria-label="Close menu">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <button class="mobile-nav-close" aria-label="Close">
+          <svg width="18" height="17" viewBox="0 0 18 17" fill="none"><path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"/></svg>
         </button>
       </div>
       <nav class="mobile-nav-links">
         <a href="index.html">Home</a>
         <a href="collection.html">Catalog</a>
         <a href="contact.html">Contact</a>
-        <a href="refund-policy.html">Refund Policy</a>
       </nav>
     </div>
   </div>
 
-  <!-- Cart Drawer -->
+  <!-- CART DRAWER -->
   <div class="cart-overlay">
     <div class="cart-drawer">
       <div class="cart-drawer-header">
         <h3>Your cart</h3>
         <button class="cart-drawer-close" aria-label="Close cart">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="18" height="17" viewBox="0 0 18 17" fill="none"><path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"/></svg>
         </button>
       </div>
       <div class="cart-drawer-body"></div>
       <div class="cart-drawer-footer" style="display:none;">
         <div class="cart-total"><span>Subtotal</span><span class="cart-total-amount">$0.00</span></div>
-        <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);margin-bottom:16px;">Shipping calculated at checkout.</p>
-        <a href="cart.html" class="btn btn-primary" style="width:100%;display:flex;padding:16px;font-size:1rem;justify-content:center;border-radius:14px;">Check out</a>
+        <a href="cart.html" class="button">Check out</a>
       </div>
     </div>
   </div>
 
-  <!-- MAIN -->
-  <main id="main-content">
+  <!-- MAIN CONTENT -->
+  <main>
 
-    <!-- Hero Title -->
-    <div class="collection-hero">
-      <div class="page-width">
-        <h1 class="collection-hero__title">Shop For LunaFN Accounts</h1>
-        <p class="collection-hero__subtitle">SUMMER DISCOUNT DEAL! (%45 OFF)</p>
+    <!-- COLLECTION (Featured) -->
+    <section class="collection">
+      <div class="collection__title">
+        <h2><em><strong>Shop For LunaFN Accounts</strong></em></h2>
+        <div class="collection__description"><p>SUMMER DISCOUNT DEAL! (%45 OFF) </p></div>
       </div>
-    </div>
 
-    <!-- Product Grid -->
-    <section class="product-section">
-      <div class="page-width">
-        <div class="product-grid">
+      <div class="product-grid-wrap">
+        <ul class="product-grid">
 
-          <a href="product.html?id=1" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#e8b04a" stroke="#b8841f" stroke-width="2"/>
-                <line x1="55" y1="100" x2="145" y2="100" stroke="#b8841f" stroke-width="3"/>
-                <line x1="55" y1="115" x2="145" y2="115" stroke="#b8841f" stroke-width="3"/>
-                <line x1="55" y1="130" x2="145" y2="130" stroke="#b8841f" stroke-width="3"/>
-                <line x1="55" y1="145" x2="145" y2="145" stroke="#b8841f" stroke-width="3"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#7a5613" stroke-width="3"/>
-              </svg>
+          <!-- Product 1 - Yellow t-shirt -->
+          <li><a href="product.html?id=1" class="product-card">
+            <div class="product-card__media">
+              <svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#c1)"><path d="M448 0H0v448h448V0Z" fill="#F2F2F2"/><path d="m354.53 165.19-33.31-35.87a59.971 59.971 0 0 0-32.2-18.01l-20.99-4.2c-2.72-.49-5.45-.93-8.17-1.33l-.01.01v-.01c-1.29-.21-2.58-.31-3.88-.29-1.3.01-2.6.14-3.88.38l-7.25 1.36-7.08 1.33c-4.54.85-9.13 1.28-13.72 1.27-4.59 0-9.19-.42-13.72-1.27l-7.08-1.33-7.25-1.36c-1.28-.24-2.58-.37-3.88-.38-1.3-.02-2.6.08-3.88.29v.01l-.01-.01c-2.73.4-5.46.83-8.17 1.33l-20.99 4.2a59.971 59.971 0 0 0-32.2 18.01l-33.31 35.87c-3.03 3.26-2.81 8.37.48 11.36l32.37 29.43c3.16 2.87 8.02 2.76 11.04-.26l9.48-9.48c1.89-1.89 5.12-.55 5.12 2.12v136.76c0 4.42 3.58 8 8 8h128c4.42 0 8-3.58 8-8V198.36c0-2.67 3.23-4.01 5.12-2.12l9.48 9.48a7.994 7.994 0 0 0 11.04.26l32.37-29.43c3.29-2.99 3.51-8.1.48-11.36Z" fill="#D6912B"/><path d="M296 299H152v12h144v-12ZM296 275H152v12h144v-12ZM296 251H152v12h144v-12ZM296 227H152v12h144v-12ZM296 203H152v12h144v-12Z" fill="#E8AF57"/><path d="M286.32 131.11h-124.5a1.75 1.75 0 0 0-1.75 1.75v8.5c0 .966.783 1.75 1.75 1.75h124.5a1.75 1.75 0 0 0 1.75-1.75v-8.5a1.75 1.75 0 0 0-1.75-1.75Z" fill="#E8AF57"/><path d="m252.03 105.69-14.35 2.69a74.08 74.08 0 0 1-27.37 0l-14.35-2.69c-2.56-.48-5.17-.51-7.74-.09 1.36 18.63 16.85 33.32 35.78 33.32s34.41-14.69 35.78-33.32c-2.57-.42-5.18-.39-7.74.09h-.01Z" fill="#BD772A"/><path d="M232.38 119.11h-16.76a1.62 1.62 0 0 0-1.62 1.62v7.76c0 .895.725 1.62 1.62 1.62h16.76a1.62 1.62 0 0 0 1.62-1.62v-7.76a1.62 1.62 0 0 0-1.62-1.62Z" fill="#fff"/><path d="M185.16 103.07c1.65-.29 3.18.86 3.45 2.52 2.73 17.09 17.53 30.16 35.39 30.16s32.66-13.06 35.39-30.16c.26-1.66 1.79-2.81 3.45-2.52l5.93 1.04c1.59.28 2.68 1.78 2.43 3.38-3.64 22.79-23.38 40.21-47.2 40.21-23.82 0-43.56-17.42-47.2-40.21-.25-1.6.84-3.1 2.43-3.38l5.93-1.04Z" fill="#995927"/></g><defs><clipPath id="c1"><path fill="#fff" d="M0 0h448v448H0z"/></clipPath></defs></svg>
             </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
+            <div class="product-card__content">
+              <h3 class="product-card__heading">Example product title</h3>
+              <div class="product-card__price">$19.99 USD</div>
             </div>
-          </a>
+          </a></li>
 
-          <a href="product.html?id=2" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#7a7a7a" stroke="#4a4a4a" stroke-width="2"/>
-                <ellipse cx="100" cy="120" rx="22" ry="20" fill="#d96f5b"/>
-                <line x1="80" y1="118" x2="120" y2="118" stroke="#4a3530" stroke-width="2"/>
-                <line x1="80" y1="125" x2="120" y2="125" stroke="#4a3530" stroke-width="2"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#333" stroke-width="3"/>
-              </svg>
+          <!-- Product 2 - Gray t-shirt with red sun -->
+          <li><a href="product.html?id=2" class="product-card">
+            <div class="product-card__media">
+              <svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#c2)"><path d="M448 0H0v448h448V0Z" fill="#F2F2F2"/><path d="m354.57 165.19-33.31-35.87a59.971 59.971 0 0 0-32.2-18.01l-20.99-4.2c-2.72-.49-5.45-.93-8.17-1.33l-.01.01v-.01c-1.29-.21-2.58-.31-3.88-.29-1.3.01-2.6.14-3.88.38l-7.25 1.36-7.08 1.33c-4.54.85-9.13 1.28-13.72 1.27-4.59 0-9.19-.42-13.72-1.27l-7.08-1.33-7.25-1.36c-1.28-.24-2.58-.37-3.88-.38-1.3-.02-2.6.08-3.88.29v.01l-.01-.01c-2.73.4-5.46.83-8.17 1.33l-20.99 4.2a59.971 59.971 0 0 0-32.2 18.01l-33.31 35.87c-3.03 3.26-2.81 8.37.48 11.36l32.37 29.43c3.16 2.87 8.02 2.76 11.04-.26l9.48-9.48c1.89-1.89 5.12-.55 5.12 2.12v136.76c0 4.42 3.58 8 8 8h128c4.42 0 8-3.58 8-8V198.36c0-2.67 3.23-4.01 5.12-2.12l9.48 9.48a7.994 7.994 0 0 0 11.04.26l32.37-29.43c3.29-2.99 3.51-8.1.48-11.36Z" fill="#6C7278"/><path d="m252.07 105.87-14.35 2.69a74.08 74.08 0 0 1-27.37 0L196 105.87c-2.56-.48-5.17-.51-7.74-.09 1.36 18.63 16.85 33.32 35.78 33.32s34.41-14.69 35.78-33.32c-2.57-.42-5.18-.39-7.74.09h-.01Z" fill="#5B6167"/><path d="M232.42 119.11h-16.76a1.62 1.62 0 0 0-1.62 1.62v7.76c0 .895.725 1.62 1.62 1.62h16.76a1.62 1.62 0 0 0 1.62-1.62v-7.76a1.62 1.62 0 0 0-1.62-1.62Z" fill="#fff"/><circle cx="224" cy="240" r="56" fill="#EB836F"/><path d="M174 235h100v8H174zM174 252h100v8H174z" fill="#222"/></g><defs><clipPath id="c2"><path fill="#fff" d="M0 0h448v448H0z"/></clipPath></defs></svg>
             </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
+            <div class="product-card__content">
+              <h3 class="product-card__heading">Example product title</h3>
+              <div class="product-card__price">$19.99 USD</div>
             </div>
-          </a>
+          </a></li>
 
-          <a href="product.html?id=3" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#3e8e8e" stroke="#1d5555" stroke-width="2"/>
-                <rect x="85" y="100" width="20" height="22" fill="#226666" rx="2"/>
-                <line x1="55" y1="135" x2="145" y2="135" stroke="#1d5555" stroke-width="3"/>
-                <line x1="55" y1="150" x2="145" y2="150" stroke="#1d5555" stroke-width="3"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#1d5555" stroke-width="3"/>
-              </svg>
+          <!-- Product 3 - Teal t-shirt with pocket -->
+          <li><a href="product.html?id=3" class="product-card">
+            <div class="product-card__media">
+              <svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#c3)"><path d="M448 0H0v448h448V0Z" fill="#F2F2F2"/><path d="m354.57 165.19-33.31-35.87a59.971 59.971 0 0 0-32.2-18.01l-20.99-4.2c-2.72-.49-5.45-.93-8.17-1.33l-.01.01v-.01c-1.29-.21-2.58-.31-3.88-.29-1.3.01-2.6.14-3.88.38l-7.25 1.36-7.08 1.33c-4.54.85-9.13 1.28-13.72 1.27-4.59 0-9.19-.42-13.72-1.27l-7.08-1.33-7.25-1.36c-1.28-.24-2.58-.37-3.88-.38-1.3-.02-2.6.08-3.88.29v.01l-.01-.01c-2.73.4-5.46.83-8.17 1.33l-20.99 4.2a59.971 59.971 0 0 0-32.2 18.01l-33.31 35.87c-3.03 3.26-2.81 8.37.48 11.36l32.37 29.43c3.16 2.87 8.02 2.76 11.04-.26l9.48-9.48c1.89-1.89 5.12-.55 5.12 2.12v136.76c0 4.42 3.58 8 8 8h128c4.42 0 8-3.58 8-8V198.36c0-2.67 3.23-4.01 5.12-2.12l9.48 9.48a7.994 7.994 0 0 0 11.04.26l32.37-29.43c3.29-2.99 3.51-8.1.48-11.36Z" fill="#1F8A84"/><path d="m252.07 105.87-14.35 2.69a74.08 74.08 0 0 1-27.37 0l-14.35-2.69c-2.56-.48-5.17-.51-7.74-.09 1.36 18.63 16.85 33.32 35.78 33.32s34.41-14.69 35.78-33.32c-2.57-.42-5.18-.39-7.74.09h-.01Z" fill="#187F80"/><path d="M232.42 119.11h-16.76a1.62 1.62 0 0 0-1.62 1.62v7.76c0 .895.725 1.62 1.62 1.62h16.76a1.62 1.62 0 0 0 1.62-1.62v-7.76a1.62 1.62 0 0 0-1.62-1.62Z" fill="#fff"/><path d="M267 225l-10.37 4.15a12.378 12.378 0 0 1-9.23 0L237 225a8 8 0 0 1-5-7.4v-35.6a3 3 0 0 1 3-3h34a3 3 0 0 1 3 3v35.6a8 8 0 0 1-5 7.4Z" fill="#3A9C97"/><path d="M235 179h34a3 3 0 0 1 3 3v9h-40v-9a3 3 0 0 1 3-3Z" fill="#59B1AB"/></g><defs><clipPath id="c3"><path fill="#fff" d="M0 0h448v448H0z"/></clipPath></defs></svg>
             </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
+            <div class="product-card__content">
+              <h3 class="product-card__heading">Example product title</h3>
+              <div class="product-card__price">$19.99 USD</div>
             </div>
-          </a>
+          </a></li>
 
-          <a href="product.html?id=4" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#dc7864" stroke="#9b4a37" stroke-width="2"/>
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L150 60 L125 50 Q100 65 75 50 L50 60 Z" fill="#e8b04a"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#9b4a37" stroke-width="3"/>
-              </svg>
+          <!-- Product 4 - Red/coral t-shirt -->
+          <li><a href="product.html?id=4" class="product-card">
+            <div class="product-card__media">
+              <svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#c4)"><path d="M448 0H0v448h448V0Z" fill="#F2F2F2"/><path d="m354.54 165.19-33.31-35.87a59.971 59.971 0 0 0-32.2-18.01l-20.99-4.2c-2.72-.49-5.45-.93-8.17-1.33l-.01.01v-.01c-1.29-.21-2.58-.31-3.88-.29-1.3.01-2.6.14-3.88.38l-7.25 1.36-7.08 1.33c-4.54.85-9.13 1.28-13.72 1.27-4.59 0-9.19-.42-13.72-1.27l-7.08-1.33-7.25-1.36c-1.28-.24-2.58-.37-3.88-.38-1.3-.02-2.6.08-3.88.29v.01l-.01-.01c-2.73.4-5.46.83-8.17 1.33l-20.99 4.2a59.971 59.971 0 0 0-32.2 18.01l-33.31 35.87c-3.03 3.26-2.81 8.37.48 11.36l32.37 29.43c3.16 2.87 8.02 2.76 11.04-.26l9.48-9.48c1.89-1.89 5.12-.55 5.12 2.12v136.76c0 4.42 3.58 8 8 8h128c4.42 0 8-3.58 8-8V198.36c0-2.67 3.23-4.01 5.12-2.12l9.48 9.48a7.994 7.994 0 0 0 11.04.26l32.37-29.43c3.29-2.99 3.51-8.1.48-11.36Z" fill="#DD6A5A"/><path d="m252.03 105.87-14.35 2.69a74.08 74.08 0 0 1-27.37 0l-14.35-2.69c-2.56-.48-5.17-.51-7.74-.09 1.36 18.63 16.85 33.32 35.78 33.32s34.41-14.69 35.78-33.32c-2.57-.42-5.18-.39-7.74.09h-.01Z" fill="#C03D37"/><path d="M232.38 119.11h-16.76a1.62 1.62 0 0 0-1.62 1.62v7.76c0 .895.725 1.62 1.62 1.62h16.76a1.62 1.62 0 0 0 1.62-1.62v-7.76a1.62 1.62 0 0 0-1.62-1.62Z" fill="#fff"/><path d="m95.82 162.74-2.23 2.4c-3.03 3.26-2.81 8.37.48 11.36l32.37 29.43c3.16 2.87 8.02 2.76 11.04-.26l2.56-2.56-44.22-40.37Z" fill="#E8AF57"/><path d="m352.26 162.74 2.23 2.4c3.03 3.26 2.81 8.37-.48 11.36l-32.37 29.43c-3.16 2.87-8.02 2.76-11.04-.26l-2.56-2.56 44.22-40.37Z" fill="#E8AF57"/></g><defs><clipPath id="c4"><path fill="#fff" d="M0 0h448v448H0z"/></clipPath></defs></svg>
             </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
+            <div class="product-card__content">
+              <h3 class="product-card__heading">Example product title</h3>
+              <div class="product-card__price">$19.99 USD</div>
             </div>
-          </a>
+          </a></li>
 
-          <a href="product.html?id=5" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#5a8db0" stroke="#3d6280" stroke-width="2"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#3d6280" stroke-width="3"/>
-              </svg>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
-            </div>
-          </a>
-
-          <a href="product.html?id=6" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#9d6cb3" stroke="#6a3f80" stroke-width="2"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#6a3f80" stroke-width="3"/>
-              </svg>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
-            </div>
-          </a>
-
-          <a href="product.html?id=7" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#4a7d4a" stroke="#2e5530" stroke-width="2"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#2e5530" stroke-width="3"/>
-              </svg>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
-            </div>
-          </a>
-
-          <a href="product.html?id=8" class="product-card">
-            <div class="product-card__image">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
-                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#d4d4d4" stroke="#8a8a8a" stroke-width="2"/>
-                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#5a5a5a" stroke-width="3"/>
-              </svg>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Example product title</p>
-              <p class="product-card__price">$19.99 USD</p>
-            </div>
-          </a>
-
-        </div>
+        </ul>
       </div>
     </section>
 
-    <!-- LUNA PROOF CTA -->
+    <!-- RICH TEXT: Shop Now! Button -->
+    <section class="rich-text">
+      <div class="rich-text__wrapper">
+        <a href="collection.html" class="button">Shop Now!</a>
+      </div>
+    </section>
+
+    <!-- CUSTOM LIQUID: Luna Proof CTA -->
     <section id="luna-proof-cta">
       <div class="luna-wrap">
         <div class="luna-card">
+          <div class="luna-glow-top"></div>
+          <div class="luna-glow-bottom"></div>
           <div class="luna-top">
             <span class="luna-badge"><span class="luna-dot"></span>Trusted & Verified</span>
           </div>
           <h2 class="luna-title">Presented by <span class="luna-accent">Luna Organization</span></h2>
           <p class="luna-sub">Serving <span class="luna-strong">2,000+</span> customers with fast, secure delivery digitally.</p>
-          <div class="luna-divider" aria-hidden="true"></div>
+          <div class="luna-divider"></div>
           <div class="luna-metrics">
             <div class="luna-metric">
               <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5L11.2 6.5H16.5L12.3 9.8L13.9 15L9 11.9L4.1 15L5.7 9.8L1.5 6.5H6.8L9 1.5Z" fill="#22c55e"/></svg></div>
@@ -305,7 +238,7 @@
               <div class="luna-metric__label">Delivery</div>
             </div>
           </div>
-          <div class="luna-divider" aria-hidden="true"></div>
+          <div class="luna-divider"></div>
           <div class="luna-actions">
             <a class="luna-btn" href="collection.html">
               <span>Shop Now</span>
@@ -320,7 +253,45 @@
       </div>
     </section>
 
-    <!-- TRUST RATINGS -->
+    <!-- CUSTOM LIQUID: Refund Policy Card -->
+    <div class="rp2">
+      <div class="rp2__hero">
+        <div class="rp2__hero-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 3L5 9.5V18C5 25.8 10.8 33 18 35C25.2 33 31 25.8 31 18V9.5L18 3Z" fill="rgba(34,197,94,0.15)" stroke="#22c55e" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 18L16.5 22.5L24 14" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h1 class="rp2__title">Refund Policy</h1>
+        <p class="rp2__tagline">We stand behind every purchase — your satisfaction is our priority.</p>
+      </div>
+      <div class="rp2__card">
+        <div class="rp2__card-header">
+          <div class="rp2__badge"><span class="rp2__dot"></span>Active Policy</div>
+          <h2 class="rp2__cardTitle">30-Day Money-Back Guarantee</h2>
+          <p class="rp2__sub">Simple, fair, and no questions asked.</p>
+        </div>
+        <div class="rp2__divider"></div>
+        <div class="rp2__body">
+          <p class="rp2__p">If you are not fully satisfied with the product you receive, you are eligible for a complete refund by contacting our support team. We'll make it right.</p>
+          <div class="rp2__highlight">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="rp2__highlight-icon"><circle cx="8" cy="8" r="6.5" stroke="#22c55e" stroke-width="1.4"/><path d="M8 5V8.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11" r="0.8" fill="#22c55e"/></svg>
+            <p class="rp2__highlight-text">Your purchase must have been made within the last <strong>30 days</strong> to qualify for a refund.</p>
+          </div>
+          <div class="rp2__ineligible">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="rp2__ineligible-icon"><circle cx="7.5" cy="7.5" r="6.25" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.45)" stroke-width="1.3"/><path d="M5 5L10 10M10 5L5 10" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <p class="rp2__ineligible-text">Purchases made more than 30 days ago are not eligible for a refund.</p>
+          </div>
+        </div>
+        <div class="rp2__divider"></div>
+        <div class="rp2__perks">
+          <div class="rp2__perk"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Full refund</div>
+          <div class="rp2__perk"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>No hidden fees</div>
+          <div class="rp2__perk"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Fast processing</div>
+          <div class="rp2__perk"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5L6 11.5L13 4" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Friendly support</div>
+        </div>
+      </div>
+      <p class="rp2__contact">Have a question? <a href="contact.html" class="rp2__link">Contact our support team</a> — we typically reply within a few hours.</p>
+    </div>
+
+    <!-- CUSTOM LIQUID: Trust Ratings -->
     <section id="luna-trust-section">
       <div class="lts-wrap">
         <div class="lts-card">
@@ -344,59 +315,92 @@
 
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-main">
-      <div class="page-width">
-        <div class="footer-grid">
-          <div>
-            <p class="footer-logo-text">My Store</p>
-            <p class="footer-desc">LunaFN Accounts — Fast, secure, and trusted by 2,000+ customers.</p>
-          </div>
-          <div>
-            <p class="footer-email-label">Join our email list</p>
-            <p class="footer-email-desc">Get exclusive deals and early access to new products.</p>
-            <form class="footer-signup" data-newsletter-form>
-              <input type="email" placeholder="Email address" aria-label="Email address" required>
-              <button type="submit">Sign up <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-utilities">
-      <div class="page-width">
-        <div class="footer-utilities-inner">
-          <p class="footer-copyright">© 2025, My Store. Powered by Shopify</p>
-          <nav class="footer-policy-list">
-            <a href="refund-policy.html">Refund policy</a>
-            <a href="#">Privacy policy</a>
-            <a href="#">Terms of service</a>
-          </nav>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.34 6.33 6.34 6.34 0 0 0 12.67 0V8.69a8.15 8.15 0 0 0 4.77 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
-          </div>
-        </div>
-      </div>
+    <div class="footer__copyright">
+      <small>© 2026, <a href="index.html">My Store</a></small>
+      <small><a href="#" target="_blank" rel="nofollow">Inc.</a></small>
+      <ul class="footer__policies">
+        <li><small><a href="#">Privacy policy</a></small></li>
+      </ul>
     </div>
   </footer>
 
+  <!-- LUNA REMINDER TOAST -->
+  <div id="lunaReminderToast" role="status" aria-live="polite" style="display:none;">
+    <div class="lrt-card">
+      <div class="lrt-accent"></div>
+      <div class="lrt-body">
+        <div class="lrt-icon">🔔</div>
+        <div class="lrt-text">
+          <div class="lrt-title">Reminder</div>
+          <div class="lrt-msg">Every account information &amp; product delivery will be delivered to your email entered at checkout.</div>
+        </div>
+        <button class="lrt-close" type="button" aria-label="Dismiss">×</button>
+      </div>
+    </div>
+  </div>
+
   <script src="main.js"></script>
   <script>
-    let totalSeconds = 419 * 3600 + 18 * 60 + 57;
-    function updateCountdown() {
-      if (totalSeconds <= 0) return;
-      totalSeconds--;
-      const h = Math.floor(totalSeconds / 3600);
-      const m = Math.floor((totalSeconds % 3600) / 60);
-      const s = totalSeconds % 60;
-      const str = `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-      const el = document.getElementById('countdown');
-      if (el) el.textContent = str;
-    }
-    setInterval(updateCountdown, 1000);
+    // ANNOUNCEMENT BAR SLIDESHOW
+    (function() {
+      var slides = document.querySelectorAll('.announcement-bar__slide');
+      var current = 0;
+      function nextSlide() {
+        slides[current].classList.remove('is-active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('is-active');
+      }
+      function prevSlide() {
+        slides[current].classList.remove('is-active');
+        current = (current - 1 + slides.length) % slides.length;
+        slides[current].classList.add('is-active');
+      }
+      setInterval(nextSlide, 3000);
+      document.querySelector('.slider-button--next').addEventListener('click', nextSlide);
+      document.querySelector('.slider-button--prev').addEventListener('click', prevSlide);
+    })();
+
+    // URGENCY COUNTDOWN
+    (function() {
+      var deadline = new Date('June 5, 2026').getTime();
+      function tickTimer() {
+        var diff = deadline - Date.now();
+        if (diff <= 0) { document.getElementById('lu-countdown').textContent = 'EXPIRED'; return; }
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('lu-countdown').textContent =
+          String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      }
+      tickTimer();
+      setInterval(tickTimer, 1000);
+      var viewers = 24;
+      setInterval(function() {
+        viewers = Math.max(14, Math.min(38, viewers + Math.floor(Math.random() * 5) - 2));
+        document.getElementById('lu-viewers').textContent = viewers;
+      }, 7000);
+    })();
+
+    // LUNA REMINDER TOAST
+    (function(){
+      var delayMs = 1000, autoHideMs = 8000;
+      var toast = document.getElementById("lunaReminderToast");
+      if (!toast) return;
+      function show() {
+        toast.style.display = "block";
+        requestAnimationFrame(function() { toast.classList.add("is-active"); });
+        setTimeout(hide, autoHideMs);
+      }
+      function hide() {
+        toast.classList.remove("is-active");
+        setTimeout(function() { toast.style.display = "none"; }, 300);
+      }
+      var closeBtn = toast.querySelector(".lrt-close");
+      if (closeBtn) closeBtn.addEventListener("click", hide);
+      setTimeout(show, delayMs);
+    })();
   </script>
 </body>
 </html>
