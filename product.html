@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Product — My Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+
+  <div class="announcement-bar"><div class="page-width">Welcome to our store</div></div>
+
+  <header class="site-header">
+    <div class="page-width">
+      <div class="header-inner">
+        <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="header-logo"><a href="index.html"><span class="header-logo-text">My Store</span></a></div>
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="collection.html" class="nav-link">All Products</a></li>
+            <li class="nav-item" style="position:relative;"><a href="collection.html" class="nav-link">Collections ▾</a><div class="mega-menu"><ul><li><a href="collection.html">New Arrivals</a></li><li><a href="collection.html">Best Sellers</a></li><li><a href="collection.html">Sale</a></li></ul></div></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="header-action-btn" data-search-toggle aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
+          </button>
+          <button class="header-action-btn" data-cart-toggle aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/></svg>
+            <span class="cart-count" style="display:none">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-overlay">
+    <div class="search-panel">
+      <form action="search.html" method="get" class="search-input-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
+        <input type="search" name="q" placeholder="Search products..." autocomplete="off" aria-label="Search">
+      </form>
+    </div>
+  </div>
+
+  <div class="mobile-nav-overlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <span class="header-logo-text">My Store</span>
+        <button class="mobile-nav-close" aria-label="Close"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="collection.html">All Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="cart-overlay">
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h3>Your cart</h3>
+        <button class="cart-drawer-close" aria-label="Close cart"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer" style="display:none;">
+        <div class="cart-total"><span>Subtotal</span><span class="cart-total-amount">$0.00</span></div>
+        <p style="font-size:0.75rem;color:rgba(0,0,0,0.5);margin-bottom:16px;">Shipping and taxes calculated at checkout.</p>
+        <a href="cart.html" class="btn btn-primary" style="width:100%;display:flex;padding:16px;font-size:1rem;justify-content:center;">Check out</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <div class="product-page">
+      <div class="page-width">
+
+        <nav class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="collection.html">All Products</a>
+          <span>›</span>
+          <span>Sample Product 1</span>
+        </nav>
+
+        <div class="product-layout">
+
+          <!-- Gallery -->
+          <div class="product-gallery">
+            <div class="product-gallery-main">
+              <div style="width:100%;height:100%;background:linear-gradient(135deg,#f0f0f0,#e0e0e0);display:flex;align-items:center;justify-content:center;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" style="width:64px;height:64px;opacity:0.3;">
+                  <rect x="6" y="6" width="36" height="36" rx="4"/><circle cx="18" cy="18" r="4"/><path d="m42 30-10-10L10 42"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-gallery-thumbnails">
+              <div class="gallery-thumb active">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#f0f0f0,#e0e0e0);"></div>
+              </div>
+              <div class="gallery-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8e8e8,#d8d8d8);"></div>
+              </div>
+              <div class="gallery-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#ebebeb,#dbdbdb);"></div>
+              </div>
+              <div class="gallery-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#eaeaea,#dadada);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <h1 class="product-info__title">Sample Product 1</h1>
+            <p class="product-info__price">$29.99</p>
+
+            <!-- Variant picker - Size -->
+            <div>
+              <span class="variant-label">Size</span>
+              <div class="variant-buttons" data-variant-group>
+                <button class="variant-btn selected" data-value="XS">XS</button>
+                <button class="variant-btn" data-value="S">S</button>
+                <button class="variant-btn" data-value="M">M</button>
+                <button class="variant-btn" data-value="L">L</button>
+                <button class="variant-btn" data-value="XL">XL</button>
+              </div>
+            </div>
+
+            <!-- Variant picker - Color -->
+            <div>
+              <span class="variant-label">Color</span>
+              <div class="variant-buttons" data-variant-group>
+                <button class="variant-btn selected" data-value="Black">Black</button>
+                <button class="variant-btn" data-value="White">White</button>
+                <button class="variant-btn" data-value="Grey">Grey</button>
+              </div>
+            </div>
+
+            <!-- Quantity -->
+            <div>
+              <span class="variant-label">Quantity</span>
+              <div class="quantity-selector">
+                <button class="quantity-btn" onclick="this.nextElementSibling.value=Math.max(1,+this.nextElementSibling.value-1)">−</button>
+                <input class="quantity-input" value="1" min="1" type="number">
+                <button class="quantity-btn" onclick="this.previousElementSibling.value=+this.previousElementSibling.value+1">+</button>
+              </div>
+            </div>
+
+            <!-- Add to cart -->
+            <form data-product-form
+              data-product-title="Sample Product 1"
+              data-product-price="29.99"
+              data-product-id="product-1">
+              <input type="hidden" data-variant-selected value="XS / Black">
+              <button type="submit" class="add-to-cart-btn">Add to cart</button>
+            </form>
+
+            <hr class="divider">
+
+            <!-- Description -->
+            <div class="product-info__description">
+              <p>This is a sample product description. Replace this text with your actual product details. Include key features, materials, dimensions, and any other relevant information that will help customers make a purchasing decision.</p>
+              <p>Add your product details here. This text is placeholder content that should be replaced with your actual product information.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Product Recommendations -->
+        <div style="margin-top:64px;">
+          <div class="section-header">
+            <h3>You may also like</h3>
+          </div>
+          <div class="product-grid">
+            <a href="product.html?id=2" class="product-card">
+              <div class="product-card__image"><div class="product-card__image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div></div>
+              <div class="product-card__info"><p class="product-card__title">Sample Product 2</p><p class="product-card__price">$49.99</p></div>
+            </a>
+            <a href="product.html?id=3" class="product-card">
+              <div class="product-card__image"><div class="product-card__image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div></div>
+              <div class="product-card__info"><p class="product-card__title">Sample Product 3</p><p class="product-card__price">$19.99</p></div>
+            </a>
+            <a href="product.html?id=4" class="product-card">
+              <div class="product-card__image"><div class="product-card__image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div></div>
+              <div class="product-card__info"><p class="product-card__title">Sample Product 4</p><p class="product-card__price">$39.99</p></div>
+            </a>
+            <a href="product.html?id=5" class="product-card">
+              <div class="product-card__image"><div class="product-card__image-placeholder"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div></div>
+              <div class="product-card__info"><p class="product-card__title">Sample Product 5</p><p class="product-card__price">$59.99</p></div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="page-width">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-email-label">Join our email list</p>
+            <p class="footer-email-desc">Get exclusive deals and early access to new products.</p>
+          </div>
+          <form class="footer-signup" data-newsletter-form>
+            <input type="email" placeholder="Email address" aria-label="Email address" required>
+            <button type="submit"><span>Sign up</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-utilities">
+      <div class="page-width">
+        <div class="footer-utilities-inner">
+          <p class="footer-copyright">© 2025, My Store. Powered by Shopify</p>
+          <nav class="footer-policy-list"><a href="#">Privacy policy</a><a href="#">Terms of service</a><a href="#">Refund policy</a></nav>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

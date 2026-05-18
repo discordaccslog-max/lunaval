@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — My Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cart-page { padding: 48px 0; }
+    .cart-page-layout { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start; }
+    .cart-page h1 { margin-bottom: 32px; }
+    .cart-page-items { border-top: 1px solid var(--color-border); }
+    .cart-page-item { display: grid; grid-template-columns: 96px 1fr auto; gap: 20px; padding: 24px 0; border-bottom: 1px solid var(--color-border); align-items: center; }
+    .cart-page-item-img { width: 96px; height: 96px; background: #f5f5f5; border-radius: var(--border-radius-card); overflow: hidden; flex-shrink: 0; }
+    .cart-summary-box { background: #f5f5f5; border-radius: var(--border-radius-popover); padding: 28px; position: sticky; top: 80px; }
+    .cart-summary-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 0.9375rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .cart-summary-total { display: flex; justify-content: space-between; padding: 16px 0; font-size: 1.125rem; font-weight: 600; }
+    @media (max-width: 749px) { .cart-page-layout { grid-template-columns: 1fr; } .cart-summary-box { position: static; } }
+  </style>
+</head>
+<body>
+
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+  <div class="announcement-bar"><div class="page-width">Welcome to our store</div></div>
+
+  <header class="site-header">
+    <div class="page-width">
+      <div class="header-inner">
+        <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="header-logo"><a href="index.html"><span class="header-logo-text">My Store</span></a></div>
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="collection.html" class="nav-link">All Products</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="header-action-btn" data-search-toggle aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
+          </button>
+          <button class="header-action-btn" data-cart-toggle aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/></svg>
+            <span class="cart-count" style="display:none">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-overlay"><div class="search-panel"><form action="search.html" method="get" class="search-input-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg><input type="search" name="q" placeholder="Search products..." autocomplete="off" aria-label="Search"></form></div></div>
+  <div class="mobile-nav-overlay"><div class="mobile-nav-drawer"><div class="mobile-nav-header"><span class="header-logo-text">My Store</span><button class="mobile-nav-close" aria-label="Close"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div><nav class="mobile-nav-links"><a href="index.html">Home</a><a href="collection.html">All Products</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></div></div>
+  <div class="cart-overlay"><div class="cart-drawer"><div class="cart-drawer-header"><h3>Your cart</h3><button class="cart-drawer-close" aria-label="Close cart"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div><div class="cart-drawer-body"></div><div class="cart-drawer-footer" style="display:none;"><div class="cart-total"><span>Subtotal</span><span class="cart-total-amount">$0.00</span></div><a href="cart.html" class="btn btn-primary" style="width:100%;display:flex;padding:16px;font-size:1rem;justify-content:center;">Check out</a></div></div></div>
+
+  <main id="main-content">
+    <div class="cart-page">
+      <div class="page-width">
+        <h1>Your cart</h1>
+        <div class="cart-page-layout" id="cart-page-content">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main"><div class="page-width"><div class="footer-grid"><div><p class="footer-email-label">Join our email list</p><p class="footer-email-desc">Get exclusive deals and early access to new products.</p></div><form class="footer-signup" data-newsletter-form><input type="email" placeholder="Email address" required><button type="submit"><span>Sign up</span></button></form></div></div></div>
+    <div class="footer-utilities"><div class="page-width"><div class="footer-utilities-inner"><p class="footer-copyright">© 2025, My Store.</p><nav class="footer-policy-list"><a href="#">Privacy policy</a><a href="#">Terms of service</a></nav></div></div></div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function renderCartPage() {
+      const container = document.getElementById('cart-page-content');
+      if (!container) return;
+
+      if (cart.items.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column:1/-1;text-align:center;padding:80px 0;">
+            <p style="font-size:1.125rem;margin-bottom:24px;color:rgba(0,0,0,0.5);">Your cart is empty</p>
+            <a href="collection.html" class="btn btn-primary">Continue shopping</a>
+          </div>`;
+        return;
+      }
+
+      const itemsHtml = cart.items.map(item => `
+        <div class="cart-page-item">
+          <div class="cart-page-item-img"></div>
+          <div>
+            <p style="font-weight:500;margin-bottom:4px;">${item.title}</p>
+            ${item.variant ? `<p style="font-size:0.875rem;color:rgba(0,0,0,0.5);margin-bottom:12px;">${item.variant}</p>` : ''}
+            <div class="quantity-selector" style="height:36px;">
+              <button class="quantity-btn" onclick="changeQty('${item.id}','${item.variant}',-1)" style="width:36px;height:36px;">−</button>
+              <input class="quantity-input" value="${item.quantity}" style="width:40px;height:36px;" readonly>
+              <button class="quantity-btn" onclick="changeQty('${item.id}','${item.variant}',1)" style="width:36px;height:36px;">+</button>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <p style="font-weight:500;">$${(item.price * item.quantity).toFixed(2)}</p>
+            <button onclick="removeFromCart('${item.id}','${item.variant}')" style="font-size:0.75rem;color:rgba(0,0,0,0.4);background:none;border:none;cursor:pointer;text-decoration:underline;margin-top:8px;">Remove</button>
+          </div>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div>
+          <div class="cart-page-items">${itemsHtml}</div>
+          <a href="collection.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.875rem;margin-top:20px;color:rgba(0,0,0,0.5);">← Continue shopping</a>
+        </div>
+        <div class="cart-summary-box">
+          <h3 style="margin-bottom:20px;font-size:1.125rem;">Order summary</h3>
+          <div class="cart-summary-row"><span>Subtotal</span><span>$${cart.total().toFixed(2)}</span></div>
+          <div class="cart-summary-row"><span>Shipping</span><span style="color:rgba(0,0,0,0.4);">Calculated at checkout</span></div>
+          <div class="cart-summary-total"><span>Total</span><span>$${cart.total().toFixed(2)}</span></div>
+          <p style="font-size:0.75rem;color:rgba(0,0,0,0.4);margin-bottom:16px;">Taxes calculated at checkout.</p>
+          <button class="btn btn-primary" style="width:100%;padding:16px;font-size:1rem;border-radius:14px;border:none;cursor:pointer;"
+            onclick="alert('Checkout functionality requires connecting to a payment processor like Stripe or Shopify.')">
+            Check out
+          </button>
+        </div>`;
+    }
+
+    // Re-render after original renderCartItems call
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+    });
+
+    // Patch removeFromCart & changeQty to also re-render page
+    const _origRemove = window.removeFromCart;
+    window.removeFromCart = function(id, variant) {
+      _origRemove(id, variant);
+      renderCartPage();
+    };
+    const _origChange = window.changeQty;
+    window.changeQty = function(id, variant, delta) {
+      _origChange(id, variant, delta);
+      renderCartPage();
+    };
+  </script>
+</body>
+</html>
