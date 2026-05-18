@@ -3,22 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Store</title>
-  <meta name="description" content="Browse our latest products">
+  <title>My Store — Shop For LunaFN Accounts</title>
+  <meta name="description" content="Shop For LunaFN Accounts. 2000+ Happy Customers. Instant Delivery. 24/7 Support.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Skip to content -->
   <a class="skip-to-content" href="#main-content">Skip to content</a>
 
-  <!-- Announcement Bar -->
-  <div class="announcement-bar">
-    <div class="page-width">
-      Welcome to our store
+  <!-- Top Announcement: Over 2000+ Customers -->
+  <div class="announcement-bar-top">
+    Over 2000+ Customers!
+  </div>
+
+  <!-- Scrolling Urgency Bar -->
+  <div class="urgency-bar">
+    <div class="urgency-bar__track" id="urgency-track">
+      <!-- Set 1 -->
+      <div class="urgency-bar__item"><span class="dot dot--orange"></span>🔥 45% OFF — Limited time deal</div>
+      <div class="urgency-bar__item"><span class="dot dot--red"></span>⏱ Ends in <span id="countdown">419:36:17</span></div>
+      <div class="urgency-bar__item"><span class="dot dot--red"></span>🔴 Low Stock — limited accounts available</div>
+      <div class="urgency-bar__item"><span class="dot dot--green"></span>🟢 24 people viewing now</div>
+      <div class="urgency-bar__item"><span class="dot dot--green"></span>⚡ Instant Delivery!</div>
+      <div class="urgency-bar__item"><span class="dot dot--orange"></span>💰 %45 OFF Summer Discount Deal</div>
+      <div class="urgency-bar__item"><span class="dot dot--green"></span>✅ Affordable Prices!</div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="urgency-bar__item"><span class="dot dot--orange"></span>🔥 45% OFF — Limited time deal</div>
+      <div class="urgency-bar__item"><span class="dot dot--red"></span>⏱ Ends in <span class="countdown-clone">419:36:17</span></div>
+      <div class="urgency-bar__item"><span class="dot dot--red"></span>🔴 Low Stock — limited accounts available</div>
+      <div class="urgency-bar__item"><span class="dot dot--green"></span>🟢 24 people viewing now</div>
+      <div class="urgency-bar__item"><span class="dot dot--green"></span>⚡ Instant Delivery!</div>
+      <div class="urgency-bar__item"><span class="dot dot--orange"></span>💰 %45 OFF Summer Discount Deal</div>
+      <div class="urgency-bar__item"><span class="dot dot--green"></span>✅ Affordable Prices!</div>
     </div>
   </div>
 
@@ -27,61 +46,28 @@
     <div class="page-width">
       <div class="header-inner">
 
-        <!-- Mobile menu toggle -->
-        <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu" aria-expanded="false">
-          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+        <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
 
-        <!-- Logo -->
         <div class="header-logo">
-          <a href="index.html" aria-label="My Store - Home">
-            <span class="header-logo-text">My Store</span>
-          </a>
+          <a href="index.html"><span class="header-logo-text">My Store</span></a>
         </div>
 
-        <!-- Desktop Nav -->
-        <nav class="header-nav" role="navigation" aria-label="Main navigation">
-          <ul class="nav-list" role="list">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="collection.html" class="nav-link">All Products</a>
-            </li>
-            <li class="nav-item" style="position:relative;">
-              <a href="collection.html" class="nav-link">Collections ▾</a>
-              <div class="mega-menu">
-                <ul>
-                  <li><a href="collection.html">New Arrivals</a></li>
-                  <li><a href="collection.html">Best Sellers</a></li>
-                  <li><a href="collection.html">Sale</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
-            </li>
+        <nav class="header-nav" role="navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="collection.html" class="nav-link">Catalog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
-        <!-- Actions -->
         <div class="header-actions">
           <button class="header-action-btn" data-search-toggle aria-label="Search">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
-              <circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/>
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
           </button>
           <button class="header-action-btn" data-cart-toggle aria-label="Cart">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/></svg>
             <span class="cart-count" style="display:none">0</span>
           </button>
         </div>
@@ -91,197 +77,243 @@
   </header>
 
   <!-- Search Overlay -->
-  <div class="search-overlay" role="dialog" aria-label="Search" aria-modal="true">
+  <div class="search-overlay">
     <div class="search-panel">
-      <form action="index.html" method="get" class="search-input-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/>
-          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/>
-        </svg>
-        <input type="search" name="q" placeholder="Search products..." autocomplete="off" aria-label="Search">
+      <form class="search-input-wrap" onsubmit="return false;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
+        <input type="search" placeholder="Search products..." autocomplete="off" aria-label="Search">
       </form>
     </div>
   </div>
 
   <!-- Mobile Nav -->
-  <div class="mobile-nav-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <div class="mobile-nav-overlay">
     <div class="mobile-nav-drawer">
       <div class="mobile-nav-header">
         <span class="header-logo-text">My Store</span>
         <button class="mobile-nav-close" aria-label="Close menu">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
       </div>
       <nav class="mobile-nav-links">
         <a href="index.html">Home</a>
-        <a href="collection.html">All Products</a>
-        <a href="collection.html">New Arrivals</a>
-        <a href="collection.html">Best Sellers</a>
-        <a href="collection.html">Sale</a>
-        <a href="about.html">About</a>
+        <a href="collection.html">Catalog</a>
         <a href="contact.html">Contact</a>
+        <a href="refund-policy.html">Refund Policy</a>
       </nav>
     </div>
   </div>
 
   <!-- Cart Drawer -->
-  <div class="cart-overlay" role="dialog" aria-label="Cart" aria-modal="true">
+  <div class="cart-overlay">
     <div class="cart-drawer">
       <div class="cart-drawer-header">
         <h3>Your cart</h3>
         <button class="cart-drawer-close" aria-label="Close cart">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
       </div>
-      <div class="cart-drawer-body">
-        <!-- Rendered by JS -->
-      </div>
+      <div class="cart-drawer-body"></div>
       <div class="cart-drawer-footer" style="display:none;">
-        <div class="cart-total">
-          <span>Subtotal</span>
-          <span class="cart-total-amount">$0.00</span>
-        </div>
-        <p style="font-size:0.75rem;color:rgba(0,0,0,0.5);margin-bottom:16px;">Shipping and taxes calculated at checkout.</p>
-        <a href="cart.html" class="btn btn-primary" style="width:100%;display:flex;padding:16px;font-size:1rem;justify-content:center;">Check out</a>
+        <div class="cart-total"><span>Subtotal</span><span class="cart-total-amount">$0.00</span></div>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);margin-bottom:16px;">Shipping calculated at checkout.</p>
+        <a href="cart.html" class="btn btn-primary" style="width:100%;display:flex;padding:16px;font-size:1rem;justify-content:center;border-radius:14px;">Check out</a>
       </div>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main id="main-content">
 
-    <!-- Hero Section -->
-    <section class="hero-section hero--medium">
-      <div class="hero-bg-gradient"></div>
-      <div class="hero-content">
-        <div class="page-width">
-          <div class="hero-text">
-            <h2>Browse our latest products</h2>
-          </div>
-          <a href="collection.html" class="btn btn-secondary">Shop all</a>
+    <!-- Hero / Featured Collection Header -->
+    <div class="collection-hero">
+      <div class="page-width">
+        <h1 class="collection-hero__title">Shop For LunaFN Accounts</h1>
+        <p class="collection-hero__subtitle">SUMMER DISCOUNT DEAL! (%45 OFF)</p>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <section class="product-section">
+      <div class="page-width">
+        <div class="product-grid">
+
+          <a href="product.html?id=1" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=2" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=3" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=4" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=5" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=6" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=7" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
+          <a href="product.html?id=8" class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+              </div>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__title">Example product title</p>
+              <p class="product-card__price">$19.99 USD</p>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="product-list-section">
-      <div class="page-width">
-        <div class="section-header">
-          <h3>All products</h3>
-          <a href="collection.html" class="btn-link">View all</a>
+    <!-- CUSTOM LIQUID: Luna Proof CTA -->
+    <section id="luna-proof-cta">
+      <div class="luna-wrap">
+        <div class="luna-card">
+          <div class="luna-glow-top" aria-hidden="true"></div>
+          <div class="luna-glow-bottom" aria-hidden="true"></div>
+          <div class="luna-top">
+            <span class="luna-badge"><span class="luna-dot"></span>Trusted & Verified</span>
+          </div>
+          <h2 class="luna-title">Presented by <span class="luna-accent">Luna Organization</span></h2>
+          <p class="luna-sub">Serving <span class="luna-strong">2,000+</span> customers with fast, secure delivery digitally.</p>
+          <div class="luna-divider" aria-hidden="true"></div>
+          <div class="luna-metrics">
+            <div class="luna-metric">
+              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5L11.2 6.5H16.5L12.3 9.8L13.9 15L9 11.9L4.1 15L5.7 9.8L1.5 6.5H6.8L9 1.5Z" fill="#22c55e" opacity="0.9"/></svg></div>
+              <div class="luna-metric__num">2,000+</div>
+              <div class="luna-metric__label">Happy Customers</div>
+            </div>
+            <div class="luna-metric-sep" aria-hidden="true"></div>
+            <div class="luna-metric">
+              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#22c55e" stroke-width="1.5" opacity="0.9"/><path d="M9 5.5V9.5L11.5 11" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg></div>
+              <div class="luna-metric__num">24/7</div>
+              <div class="luna-metric__label">Live Support</div>
+            </div>
+            <div class="luna-metric-sep" aria-hidden="true"></div>
+            <div class="luna-metric">
+              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9L7 13L15 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg></div>
+              <div class="luna-metric__num">Instant</div>
+              <div class="luna-metric__label">Delivery</div>
+            </div>
+          </div>
+          <div class="luna-divider" aria-hidden="true"></div>
+          <div class="luna-actions">
+            <a class="luna-btn" href="collection.html">
+              <span>Shop Now</span>
+              <svg class="luna-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <p class="luna-reassurance">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="display:inline;vertical-align:middle;margin-right:5px;"><path d="M7 1L2 3.5V7C2 10.1 4.2 13 7 13.8C9.8 13 12 10.1 12 7V3.5L7 1Z" fill="rgba(34,197,94,0.25)" stroke="#22c55e" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7L6.3 8.8L9.5 5.5" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              30-day money-back guarantee &nbsp;·&nbsp; No questions asked
+            </p>
+          </div>
         </div>
-        <div class="product-grid" id="product-grid">
-          <!-- Products rendered below -->
-          <a href="product.html?id=1" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
+      </div>
+    </section>
+
+    <!-- CUSTOM LIQUID: Trust Ratings -->
+    <section id="luna-trust-section" aria-label="Customer ratings">
+      <div class="lts-wrap">
+        <div class="lts-card">
+          <div class="lts-header">
+            <div class="lts-badge"><span class="lts-dot"></span>Trusted Ratings</div>
+            <div class="lts-title">
+              <span class="lts-tp">
+                <span class="lts-tp-logo"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2l2.47 7.61H22l-6.13 4.45 2.34 7.19L12 17.1 5.66 21.25 8 14.06 2 9.61h7.53L12 2z"/></svg></span>
+                <span class="lts-tp-text">Trustpilot</span>
+              </span>
+              <span class="lts-sep">•</span>
+              Overall Rating <span class="lts-accent">4.8</span>
             </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 1</p>
-              <p class="product-card__price">$29.99</p>
+            <div class="lts-stars"><span class="lts-stars-fill">★★★★★</span><span class="lts-stars-dim">★★★★★</span></div>
+          </div>
+          <div class="lts-grid">
+            <div class="lts-item">
+              <div class="lts-item-top"><div class="lts-item-title">Delivery Speed</div><div class="lts-score"><span>4.7</span><small>/5</small></div></div>
+              <div class="lts-bar"><div class="lts-bar-fill" style="--w:94%"></div></div>
             </div>
-          </a>
-          <a href="product.html?id=2" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
+            <div class="lts-item">
+              <div class="lts-item-top"><div class="lts-item-title">Account Satisfaction</div><div class="lts-score"><span>4.9</span><small>/5</small></div></div>
+              <div class="lts-bar"><div class="lts-bar-fill" style="--w:98%"></div></div>
             </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 2</p>
-              <p class="product-card__price">$49.99</p>
+            <div class="lts-item">
+              <div class="lts-item-top"><div class="lts-item-title">Customer Support</div><div class="lts-score"><span>4.6</span><small>/5</small></div></div>
+              <div class="lts-bar"><div class="lts-bar-fill" style="--w:92%"></div></div>
             </div>
-          </a>
-          <a href="product.html?id=3" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
-              <span class="product-card__badge badge-sale">Sale</span>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 3</p>
-              <p class="product-card__price">$19.99</p>
-            </div>
-          </a>
-          <a href="product.html?id=4" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
-              <span class="product-card__badge badge-sold-out">Sold out</span>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 4</p>
-              <p class="product-card__price">$39.99</p>
-            </div>
-          </a>
-          <a href="product.html?id=5" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 5</p>
-              <p class="product-card__price">$59.99</p>
-            </div>
-          </a>
-          <a href="product.html?id=6" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 6</p>
-              <p class="product-card__price">$34.99</p>
-            </div>
-          </a>
-          <a href="product.html?id=7" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 7</p>
-              <p class="product-card__price">$24.99</p>
-            </div>
-          </a>
-          <a href="product.html?id=8" class="product-card">
-            <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>
-                </svg>
-              </div>
-            </div>
-            <div class="product-card__info">
-              <p class="product-card__title">Sample Product 8</p>
-              <p class="product-card__price">$44.99</p>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -289,62 +321,61 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="footer-main">
       <div class="page-width">
         <div class="footer-grid">
           <div>
+            <p class="footer-logo-text">My Store</p>
+            <p class="footer-desc">LunaFN Accounts — Fast, secure, and trusted by 2,000+ customers.</p>
+          </div>
+          <div>
             <p class="footer-email-label">Join our email list</p>
             <p class="footer-email-desc">Get exclusive deals and early access to new products.</p>
+            <form class="footer-signup" data-newsletter-form>
+              <input type="email" placeholder="Email address" aria-label="Email address" required>
+              <button type="submit">
+                Sign up
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
           </div>
-          <form class="footer-signup" data-newsletter-form>
-            <input type="email" placeholder="Email address" aria-label="Email address" required>
-            <button type="submit">
-              <span>Sign up</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </form>
+        </div>
+        <div class="footer-nav-grid" style="margin-top:32px;">
+          <div class="footer-nav-col">
+            <h4>Shop</h4>
+            <a href="collection.html">All Products</a>
+            <a href="collection.html">New Arrivals</a>
+            <a href="collection.html">Best Sellers</a>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Info</h4>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="refund-policy.html">Refund Policy</a>
+          </div>
+          <div class="footer-nav-col">
+            <h4>Connect</h4>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="footer-utilities">
       <div class="page-width">
         <div class="footer-utilities-inner">
           <p class="footer-copyright">© 2025, My Store. Powered by Shopify</p>
-          <nav class="footer-policy-list" aria-label="Footer policies">
+          <nav class="footer-policy-list">
+            <a href="refund-policy.html">Refund policy</a>
             <a href="#">Privacy policy</a>
             <a href="#">Terms of service</a>
-            <a href="#">Refund policy</a>
-            <a href="#">Shipping policy</a>
           </nav>
-          <div class="footer-social" aria-label="Social media links">
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.15 8.15 0 0 0 4.77 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/>
-              </svg>
-            </a>
-            <!-- YouTube -->
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/>
-              </svg>
-            </a>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.34 6.33 6.34 6.34 0 0 0 12.67 0V8.69a8.15 8.15 0 0 0 4.77 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
           </div>
         </div>
       </div>
@@ -352,5 +383,19 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // Countdown timer
+    let totalSeconds = 419 * 3600 + 36 * 60 + 17;
+    function updateCountdown() {
+      if (totalSeconds <= 0) return;
+      totalSeconds--;
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+      const str = `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+      document.querySelectorAll('#countdown, .countdown-clone').forEach(el => el.textContent = str);
+    }
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
