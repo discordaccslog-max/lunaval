@@ -346,6 +346,7 @@ p { margin: 0 0 1em; }
    ============================================ */
 .collection {
   padding: 8px 0 48px;
+  background: var(--color-bg-2);
 }
 
 @media (max-width: 749px) {
@@ -360,7 +361,7 @@ p { margin: 0 0 1em; }
 
 .collection__title h2 {
   font-family: var(--font-heading);
-  font-size: clamp(4.5rem, 7vw, 9rem);
+  font-size: clamp(3.2rem, 4.2vw, 5.6rem);
   font-weight: 500;
   font-style: italic;
   letter-spacing: 0.02em;
