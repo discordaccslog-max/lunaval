@@ -4,75 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Store — Shop For LunaFN Accounts</title>
-  <meta name="description" content="Shop For LunaFN Accounts. 2000+ Happy Customers. Instant Delivery. 24/7 Support.">
+  <meta name="description" content="Shop For LunaFN Accounts. 2000+ Happy Customers. Instant Delivery.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <a class="skip-to-content" href="#main-content">Skip to content</a>
 
-  <!-- Top Announcement: Over 2000+ Customers -->
+  <!-- Top Announcement Bar with arrows -->
   <div class="announcement-bar-top">
-    Over 2000+ Customers!
-  </div>
-
-  <!-- Scrolling Urgency Bar -->
-  <div class="urgency-bar">
-    <div class="urgency-bar__track" id="urgency-track">
-      <!-- Set 1 -->
-      <div class="urgency-bar__item"><span class="dot dot--orange"></span>🔥 45% OFF — Limited time deal</div>
-      <div class="urgency-bar__item"><span class="dot dot--red"></span>⏱ Ends in <span id="countdown">419:36:17</span></div>
-      <div class="urgency-bar__item"><span class="dot dot--red"></span>🔴 Low Stock — limited accounts available</div>
-      <div class="urgency-bar__item"><span class="dot dot--green"></span>🟢 24 people viewing now</div>
-      <div class="urgency-bar__item"><span class="dot dot--green"></span>⚡ Instant Delivery!</div>
-      <div class="urgency-bar__item"><span class="dot dot--orange"></span>💰 %45 OFF Summer Discount Deal</div>
-      <div class="urgency-bar__item"><span class="dot dot--green"></span>✅ Affordable Prices!</div>
-      <!-- Set 2 (duplicate for seamless loop) -->
-      <div class="urgency-bar__item"><span class="dot dot--orange"></span>🔥 45% OFF — Limited time deal</div>
-      <div class="urgency-bar__item"><span class="dot dot--red"></span>⏱ Ends in <span class="countdown-clone">419:36:17</span></div>
-      <div class="urgency-bar__item"><span class="dot dot--red"></span>🔴 Low Stock — limited accounts available</div>
-      <div class="urgency-bar__item"><span class="dot dot--green"></span>🟢 24 people viewing now</div>
-      <div class="urgency-bar__item"><span class="dot dot--green"></span>⚡ Instant Delivery!</div>
-      <div class="urgency-bar__item"><span class="dot dot--orange"></span>💰 %45 OFF Summer Discount Deal</div>
-      <div class="urgency-bar__item"><span class="dot dot--green"></span>✅ Affordable Prices!</div>
+    <div class="announcement-bar-inner">
+      <button class="announcement-arrow announcement-arrow--left" aria-label="Previous">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M9 1L3 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span class="announcement-bar-text">Over 2000+Customers!</span>
+      <button class="announcement-arrow announcement-arrow--right" aria-label="Next">
+        <svg viewBox="0 0 14 14" fill="none"><path d="M5 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Urgency Bar (static row of 4 items) -->
+  <div class="urgency-bar">
+    <div class="urgency-bar-inner">
+      <div class="urgency-item">
+        <span class="urgency-item-icon">🔥</span>
+        <span class="urgency-item-bold text-orange">45% OFF</span>
+        <span style="color:rgba(255,255,255,0.6);">— Limited time deal</span>
+      </div>
+      <div class="urgency-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="opacity:0.7;"><circle cx="7" cy="7" r="6" stroke="#ef4444" stroke-width="1.3"/><path d="M7 3.5V7l2 1.5" stroke="#ef4444" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>Ends in <span class="urgency-item-bold text-red" id="countdown">419:18:57</span></span>
+      </div>
+      <div class="urgency-item">
+        <span class="urgency-dot urgency-dot--red"></span>
+        <span class="urgency-item-bold text-red">Low Stock</span>
+        <span style="color:rgba(255,255,255,0.6);">— limited accounts available</span>
+      </div>
+      <div class="urgency-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7s2-4 6-4 6 4 6 4-2 4-6 4-6-4-6-4z" stroke="#22c55e" stroke-width="1.3"/><circle cx="7" cy="7" r="2" stroke="#22c55e" stroke-width="1.3"/></svg>
+        <span><span class="urgency-item-bold text-green">24</span> people viewing now</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with centered logo + nav below -->
   <header class="site-header" role="banner">
     <div class="page-width">
-      <div class="header-inner">
 
-        <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu">
-          <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
+      <div class="header-top-row">
+        <!-- LEFT: search + mobile menu -->
+        <div class="header-left">
+          <button class="header-menu-toggle" data-menu-toggle aria-label="Open menu">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M1 3.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M1 10.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <button class="header-action-btn" data-search-toggle aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
+          </button>
+        </div>
 
+        <!-- CENTER: logo -->
         <div class="header-logo">
           <a href="index.html"><span class="header-logo-text">My Store</span></a>
         </div>
 
-        <nav class="header-nav" role="navigation">
-          <ul class="nav-list">
-            <li><a href="index.html" class="nav-link active">Home</a></li>
-            <li><a href="collection.html" class="nav-link">Catalog</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-
-        <div class="header-actions">
-          <button class="header-action-btn" data-search-toggle aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="4.75" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.5 12.5 3.25 3.25"/></svg>
+        <!-- RIGHT: account + cart -->
+        <div class="header-right">
+          <button class="header-action-btn" aria-label="Account">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 17c0-3 3-5 7-5s7 2 7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
           <button class="header-action-btn" data-cart-toggle aria-label="Cart">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/></svg>
             <span class="cart-count" style="display:none">0</span>
           </button>
         </div>
-
       </div>
+
+      <!-- Bottom row: Nav -->
+      <nav class="header-nav" role="navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="collection.html" class="nav-link">Catalog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
     </div>
   </header>
 
@@ -125,7 +144,7 @@
   <!-- MAIN -->
   <main id="main-content">
 
-    <!-- Hero / Featured Collection Header -->
+    <!-- Hero Title -->
     <div class="collection-hero">
       <div class="page-width">
         <h1 class="collection-hero__title">Shop For LunaFN Accounts</h1>
@@ -140,9 +159,14 @@
 
           <a href="product.html?id=1" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#e8b04a" stroke="#b8841f" stroke-width="2"/>
+                <line x1="55" y1="100" x2="145" y2="100" stroke="#b8841f" stroke-width="3"/>
+                <line x1="55" y1="115" x2="145" y2="115" stroke="#b8841f" stroke-width="3"/>
+                <line x1="55" y1="130" x2="145" y2="130" stroke="#b8841f" stroke-width="3"/>
+                <line x1="55" y1="145" x2="145" y2="145" stroke="#b8841f" stroke-width="3"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#7a5613" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -152,9 +176,13 @@
 
           <a href="product.html?id=2" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#7a7a7a" stroke="#4a4a4a" stroke-width="2"/>
+                <ellipse cx="100" cy="120" rx="22" ry="20" fill="#d96f5b"/>
+                <line x1="80" y1="118" x2="120" y2="118" stroke="#4a3530" stroke-width="2"/>
+                <line x1="80" y1="125" x2="120" y2="125" stroke="#4a3530" stroke-width="2"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#333" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -164,9 +192,13 @@
 
           <a href="product.html?id=3" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#3e8e8e" stroke="#1d5555" stroke-width="2"/>
+                <rect x="85" y="100" width="20" height="22" fill="#226666" rx="2"/>
+                <line x1="55" y1="135" x2="145" y2="135" stroke="#1d5555" stroke-width="3"/>
+                <line x1="55" y1="150" x2="145" y2="150" stroke="#1d5555" stroke-width="3"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#1d5555" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -176,9 +208,11 @@
 
           <a href="product.html?id=4" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#dc7864" stroke="#9b4a37" stroke-width="2"/>
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L150 60 L125 50 Q100 65 75 50 L50 60 Z" fill="#e8b04a"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#9b4a37" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -188,9 +222,10 @@
 
           <a href="product.html?id=5" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#5a8db0" stroke="#3d6280" stroke-width="2"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#3d6280" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -200,9 +235,10 @@
 
           <a href="product.html?id=6" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#9d6cb3" stroke="#6a3f80" stroke-width="2"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#6a3f80" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -212,9 +248,10 @@
 
           <a href="product.html?id=7" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#4a7d4a" stroke="#2e5530" stroke-width="2"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#2e5530" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -224,9 +261,10 @@
 
           <a href="product.html?id=8" class="product-card">
             <div class="product-card__image">
-              <div class="product-card__image-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-              </div>
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:70%;height:70%;">
+                <path d="M50 50 L75 35 Q100 50 125 35 L150 50 L170 70 L160 80 L145 75 L145 165 Q145 170 140 170 L60 170 Q55 170 55 165 L55 75 L40 80 L30 70 Z" fill="#d4d4d4" stroke="#8a8a8a" stroke-width="2"/>
+                <path d="M75 35 Q100 60 125 35" fill="none" stroke="#5a5a5a" stroke-width="3"/>
+              </svg>
             </div>
             <div class="product-card__info">
               <p class="product-card__title">Example product title</p>
@@ -238,12 +276,10 @@
       </div>
     </section>
 
-    <!-- CUSTOM LIQUID: Luna Proof CTA -->
+    <!-- LUNA PROOF CTA -->
     <section id="luna-proof-cta">
       <div class="luna-wrap">
         <div class="luna-card">
-          <div class="luna-glow-top" aria-hidden="true"></div>
-          <div class="luna-glow-bottom" aria-hidden="true"></div>
           <div class="luna-top">
             <span class="luna-badge"><span class="luna-dot"></span>Trusted & Verified</span>
           </div>
@@ -252,19 +288,19 @@
           <div class="luna-divider" aria-hidden="true"></div>
           <div class="luna-metrics">
             <div class="luna-metric">
-              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5L11.2 6.5H16.5L12.3 9.8L13.9 15L9 11.9L4.1 15L5.7 9.8L1.5 6.5H6.8L9 1.5Z" fill="#22c55e" opacity="0.9"/></svg></div>
+              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5L11.2 6.5H16.5L12.3 9.8L13.9 15L9 11.9L4.1 15L5.7 9.8L1.5 6.5H6.8L9 1.5Z" fill="#22c55e"/></svg></div>
               <div class="luna-metric__num">2,000+</div>
               <div class="luna-metric__label">Happy Customers</div>
             </div>
-            <div class="luna-metric-sep" aria-hidden="true"></div>
+            <div class="luna-metric-sep"></div>
             <div class="luna-metric">
-              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#22c55e" stroke-width="1.5" opacity="0.9"/><path d="M9 5.5V9.5L11.5 11" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg></div>
+              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#22c55e" stroke-width="1.5"/><path d="M9 5.5V9.5L11.5 11" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round"/></svg></div>
               <div class="luna-metric__num">24/7</div>
               <div class="luna-metric__label">Live Support</div>
             </div>
-            <div class="luna-metric-sep" aria-hidden="true"></div>
+            <div class="luna-metric-sep"></div>
             <div class="luna-metric">
-              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9L7 13L15 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg></div>
+              <div class="luna-metric__icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9L7 13L15 5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="luna-metric__num">Instant</div>
               <div class="luna-metric__label">Delivery</div>
             </div>
@@ -273,10 +309,10 @@
           <div class="luna-actions">
             <a class="luna-btn" href="collection.html">
               <span>Shop Now</span>
-              <svg class="luna-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="luna-arrow" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <p class="luna-reassurance">
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="display:inline;vertical-align:middle;margin-right:5px;"><path d="M7 1L2 3.5V7C2 10.1 4.2 13 7 13.8C9.8 13 12 10.1 12 7V3.5L7 1Z" fill="rgba(34,197,94,0.25)" stroke="#22c55e" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 7L6.3 8.8L9.5 5.5" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="display:inline;vertical-align:middle;margin-right:5px;"><path d="M7 1L2 3.5V7C2 10.1 4.2 13 7 13.8C9.8 13 12 10.1 12 7V3.5L7 1Z" fill="rgba(34,197,94,0.25)" stroke="#22c55e" stroke-width="1.3"/><path d="M4.5 7L6.3 8.8L9.5 5.5" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round"/></svg>
               30-day money-back guarantee &nbsp;·&nbsp; No questions asked
             </p>
           </div>
@@ -284,35 +320,23 @@
       </div>
     </section>
 
-    <!-- CUSTOM LIQUID: Trust Ratings -->
-    <section id="luna-trust-section" aria-label="Customer ratings">
+    <!-- TRUST RATINGS -->
+    <section id="luna-trust-section">
       <div class="lts-wrap">
         <div class="lts-card">
           <div class="lts-header">
             <div class="lts-badge"><span class="lts-dot"></span>Trusted Ratings</div>
             <div class="lts-title">
-              <span class="lts-tp">
-                <span class="lts-tp-logo"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2l2.47 7.61H22l-6.13 4.45 2.34 7.19L12 17.1 5.66 21.25 8 14.06 2 9.61h7.53L12 2z"/></svg></span>
-                <span class="lts-tp-text">Trustpilot</span>
-              </span>
+              <span class="lts-tp"><span class="lts-tp-logo"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2l2.47 7.61H22l-6.13 4.45 2.34 7.19L12 17.1 5.66 21.25 8 14.06 2 9.61h7.53L12 2z"/></svg></span><span>Trustpilot</span></span>
               <span class="lts-sep">•</span>
               Overall Rating <span class="lts-accent">4.8</span>
             </div>
             <div class="lts-stars"><span class="lts-stars-fill">★★★★★</span><span class="lts-stars-dim">★★★★★</span></div>
           </div>
           <div class="lts-grid">
-            <div class="lts-item">
-              <div class="lts-item-top"><div class="lts-item-title">Delivery Speed</div><div class="lts-score"><span>4.7</span><small>/5</small></div></div>
-              <div class="lts-bar"><div class="lts-bar-fill" style="--w:94%"></div></div>
-            </div>
-            <div class="lts-item">
-              <div class="lts-item-top"><div class="lts-item-title">Account Satisfaction</div><div class="lts-score"><span>4.9</span><small>/5</small></div></div>
-              <div class="lts-bar"><div class="lts-bar-fill" style="--w:98%"></div></div>
-            </div>
-            <div class="lts-item">
-              <div class="lts-item-top"><div class="lts-item-title">Customer Support</div><div class="lts-score"><span>4.6</span><small>/5</small></div></div>
-              <div class="lts-bar"><div class="lts-bar-fill" style="--w:92%"></div></div>
-            </div>
+            <div class="lts-item"><div class="lts-item-top"><div class="lts-item-title">Delivery Speed</div><div class="lts-score"><span>4.7</span><small>/5</small></div></div><div class="lts-bar"><div class="lts-bar-fill" style="--w:94%"></div></div></div>
+            <div class="lts-item"><div class="lts-item-top"><div class="lts-item-title">Account Satisfaction</div><div class="lts-score"><span>4.9</span><small>/5</small></div></div><div class="lts-bar"><div class="lts-bar-fill" style="--w:98%"></div></div></div>
+            <div class="lts-item"><div class="lts-item-top"><div class="lts-item-title">Customer Support</div><div class="lts-score"><span>4.6</span><small>/5</small></div></div><div class="lts-bar"><div class="lts-bar-fill" style="--w:92%"></div></div></div>
           </div>
         </div>
       </div>
@@ -334,31 +358,8 @@
             <p class="footer-email-desc">Get exclusive deals and early access to new products.</p>
             <form class="footer-signup" data-newsletter-form>
               <input type="email" placeholder="Email address" aria-label="Email address" required>
-              <button type="submit">
-                Sign up
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
+              <button type="submit">Sign up <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
             </form>
-          </div>
-        </div>
-        <div class="footer-nav-grid" style="margin-top:32px;">
-          <div class="footer-nav-col">
-            <h4>Shop</h4>
-            <a href="collection.html">All Products</a>
-            <a href="collection.html">New Arrivals</a>
-            <a href="collection.html">Best Sellers</a>
-          </div>
-          <div class="footer-nav-col">
-            <h4>Info</h4>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="refund-policy.html">Refund Policy</a>
-          </div>
-          <div class="footer-nav-col">
-            <h4>Connect</h4>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
           </div>
         </div>
       </div>
@@ -384,8 +385,7 @@
 
   <script src="main.js"></script>
   <script>
-    // Countdown timer
-    let totalSeconds = 419 * 3600 + 36 * 60 + 17;
+    let totalSeconds = 419 * 3600 + 18 * 60 + 57;
     function updateCountdown() {
       if (totalSeconds <= 0) return;
       totalSeconds--;
@@ -393,7 +393,8 @@
       const m = Math.floor((totalSeconds % 3600) / 60);
       const s = totalSeconds % 60;
       const str = `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-      document.querySelectorAll('#countdown, .countdown-clone').forEach(el => el.textContent = str);
+      const el = document.getElementById('countdown');
+      if (el) el.textContent = str;
     }
     setInterval(updateCountdown, 1000);
   </script>
