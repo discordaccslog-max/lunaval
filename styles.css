@@ -35,7 +35,7 @@ body {
   letter-spacing: 0.06rem;
   line-height: 1.8;
   color: var(--color-fg-muted);
-  background: var(--color-bg);
+  background: var(--color-bg-2);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -220,7 +220,7 @@ p { margin: 0 0 1em; }
   top: 0;
   z-index: 100;
   padding: 20px 30px 12px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .site-header.scrolled {
@@ -345,12 +345,12 @@ p { margin: 0 0 1em; }
    COLLECTION HEADER (Hero title)
    ============================================ */
 .collection {
-  padding: 8px 0 48px;
+  padding: 40px 0 48px;
   background: var(--color-bg-2);
 }
 
 @media (max-width: 749px) {
-  .collection { padding: 6px 0 36px; }
+  .collection { padding: 30px 0 36px; }
 }
 
 .collection__title {
