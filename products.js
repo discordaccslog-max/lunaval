@@ -38,6 +38,7 @@ window.LUNA_PRODUCTS = [
     subtitle: '150-300 SKINS LIMITED EDITION',
     price: 38.99,
     image: 'https://cdn.shopify.com/s/files/1/0720/3019/1694/files/latest.webp?v=1770915091',
+    transparent: true,
     features: ['INSTANT DELIVERY', 'WONDER GUARANTEED', '150-300 SKINS', '24/7 SUPPORT', '30 DAY WARRANTY']
   },
   {
@@ -46,6 +47,7 @@ window.LUNA_PRODUCTS = [
     subtitle: '50-150 SKINS',
     price: 38.99,
     image: 'https://cdn.shopify.com/s/files/1/0720/3019/1694/files/transparent_25bdde25-e965-4925-beb5-29228ff3c471.webp?v=1770914943',
+    transparent: true,
     features: ['INSTANT DELIVERY', 'IKONIK GUARANTEED', '50-150 SKINS', '24/7 SUPPORT', '30 DAY WARRANTY']
   },
   {
