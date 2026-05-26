@@ -1546,3 +1546,30 @@ textarea.field__input {
 .header-action-btn--active {
   background: rgba(255,255,255,0.08);
 }
+
+/* ============================================
+   TRANSPARENT PRODUCT IMAGES (Wonder, Ikonik)
+   ============================================ */
+.product-card__media--transparent {
+  background: linear-gradient(160deg, #2b2b2e 0%, #1a1a1c 100%);
+  border: 1px solid var(--color-border);
+}
+
+.product-card__media--transparent img {
+  object-fit: contain;
+  padding: 12%;
+}
+
+.product-card:hover .product-card__media--transparent img {
+  transform: scale(1.06);
+}
+
+.product-gallery__main--transparent {
+  background: linear-gradient(160deg, #2b2b2e 0%, #1a1a1c 100%);
+  border: 1px solid var(--color-border);
+}
+
+.product-gallery__main--transparent img {
+  object-fit: contain;
+  padding: 8%;
+}
