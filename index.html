@@ -300,12 +300,11 @@
   <script src="main.js"></script>
   <script src="products.js"></script>
   <script>
-    // RENDER FEATURED PRODUCTS (first 4)
+    // RENDER ALL PRODUCTS
     (function() {
       var grid = document.querySelector('.product-grid');
       if (!grid || !window.LUNA_PRODUCTS) return;
-      var featured = window.LUNA_PRODUCTS.slice(0, 4);
-      grid.innerHTML = featured.map(function(p) {
+      grid.innerHTML = window.LUNA_PRODUCTS.map(function(p) {
         return '<li>' +
           '<a href="product.html?handle=' + p.handle + '" class="product-card">' +
             '<div class="product-card__media">' +
